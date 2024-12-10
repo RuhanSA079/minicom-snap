@@ -37,6 +37,6 @@ jobs:
           snapcraft --destructive-mode
           echo ::set-output name=snap::$(ls *.snap)
       - name: Upload artifact
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           path: ${{ steps.snapcraft.outputs.snap }}
