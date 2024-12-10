@@ -1,0 +1,24 @@
+name: minicom-snap
+base: core20
+version: '1.0'
+summary: Minicom serial terminal utility in a snap
+description: |
+  N/A
+grade: stable
+confinement: devmode
+
+architectures:
+  - build-on: amd64
+  - build-on: arm64
+  - build-on: armhf
+
+parts:
+  minicom-part:
+    # See 'snapcraft plugins'
+    plugin: nil
+    stage-packages:
+      - minicom
+
+apps:
+  minicom:
+    command: usr/bin/minicom
